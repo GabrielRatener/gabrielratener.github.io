@@ -1,6 +1,6 @@
 
 window.onload = (e) => {
-  const {floor, random, abs} = Math;
+  const {floor, round, random, abs} = Math;
 
   const 
     circumference = 2 * Math.PI,
@@ -44,17 +44,20 @@ window.onload = (e) => {
   }
 
   const revealCircle = (info) => {
-    const decider = () => {
+    const decider = (ms) => {
+      const r = info.radius * (ms - start) / info.duration;
       if (r < info.radius) {
-        r += info.increment;
-        putCircle(info.point, r, info.color)
-        window.setTimeout(decider, info.tick);
+        putCircle(info.point, r, info.color);
+        window.requestAnimationFrame(decider);
       }
     };
 
-    let r = 0;
+    let start;
 
-    decider();
+    window.requestAnimationFrame((ms) => {
+      start = ms;
+      decider(ms);
+    });
   }
 
   const sleep = (ms) => {
@@ -72,30 +75,14 @@ window.onload = (e) => {
     }
   }
 
-  const flickTitle = () => {
-    const period = 6000;
-    const title = document.getElementById('title');
-    const set = (ts) => {
-      const bright = floor(abs(510 * (ts % period) / period - 255));
-
-      title.style.color = `rgb(${bright},${bright},${bright})`;
-      window.requestAnimationFrame(set);
-    }
-
-    window.requestAnimationFrame(set);
-  }
-
   const render = async (n) => {
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
     let i = 0;
 
-
-
     revealCircle({
       point: [0.15 * width, 0.15 * height],
-      increment: 2,
-      tick: 100,
+      duration: 3000,
       spawn: 0,
       color: randomColor(),
       radius: 210
@@ -104,14 +91,15 @@ window.onload = (e) => {
     await sleep(1000);
 
     for (const [x, y] of randomPoints(width, height)) {
-      revealCircle({
-        point: [x, y],
-        increment: 2,
-        tick: 100,
-        spawn: 0,
-        color: randomColor(),
-        radius: 50 + Math.round(200 * Math.random())
-      }, true);
+      if (!document.hidden) {
+        revealCircle({
+          point: [x, y],
+          duration: 2000 + floor(3000 * random()),
+          spawn: 0,
+          color: randomColor(),
+          radius: 50 + Math.round(200 * Math.random())
+        }, true);
+      }
 
       await sleep(1000);
 
