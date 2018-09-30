@@ -1,6 +1,6 @@
 
 window.onload = (e) => {
-  const {floor, round, random, abs} = Math;
+  const {floor, round, random, abs, sin, cos, atan} = Math;
 
   const 
     circumference = 2 * Math.PI,
@@ -25,14 +25,14 @@ window.onload = (e) => {
     canvas.style[style] = styles[style];
   }
 
-  const randomColor = () => {
+  const randomColor = (alpha = 0.04) => {
     var color = [];
     for (var i = 0; i < 3; i++) {
       var component = Math.floor(256 * Math.random());
       color.push(component);
     }
 
-    color.push(0.04);
+    color.push(alpha);
     return "rgba(" + color.join(",") + ")";
   }
 
@@ -51,6 +51,33 @@ window.onload = (e) => {
         window.requestAnimationFrame(decider);
       }
     };
+
+    let start;
+
+    window.requestAnimationFrame((ms) => {
+      start = ms;
+      decider(ms);
+    });
+  }
+
+  const revealSpiral = (info) => {
+    const decider = (ms) => {
+      const time = ms - start;
+      const t = 2 * atan(5 * time / info.duration) / Math.PI;
+      const r = info.radius * t;
+      const point = [
+        x + r * cos(0.01 * info.factor * time),
+        y + r * sin(0.01 * info.factor * time)
+      ];
+
+      if (time < info.duration) {
+        putCircle(point, 5, info.color);
+        window.requestAnimationFrame(decider);
+      }
+    };
+
+    // starting coordinates
+    const [x, y] = info.point;
 
     let start;
 
@@ -95,7 +122,6 @@ window.onload = (e) => {
         revealCircle({
           point: [x, y],
           duration: 2000 + floor(3000 * random()),
-          spawn: 0,
           color: randomColor(),
           radius: 50 + Math.round(200 * Math.random())
         }, true);
@@ -106,6 +132,8 @@ window.onload = (e) => {
       i++;
     }
   }
+
+
 
   function adjustCanvas() {
     canvas.setAttribute("height", canvas.clientHeight);
