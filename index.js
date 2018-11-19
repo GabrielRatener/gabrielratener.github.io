@@ -119,12 +119,26 @@ window.onload = (e) => {
 
     for (const [x, y] of randomPoints(width, height)) {
       if (!document.hidden) {
+
         revealCircle({
           point: [x, y],
           duration: 2000 + floor(3000 * random()),
           color: randomColor(),
           radius: 50 + Math.round(200 * Math.random())
         }, true);
+
+        /*
+        if (random() < 0.5)
+          // maybe put circle here in future...
+        else
+          revealSpiral({
+            point: [x, y],
+            factor: 20,
+            duration: 2000 + floor(3000 * random()),
+            color: randomColor(1),
+            radius: 50 + Math.round(200 * Math.random())
+          }, true);
+        */
       }
 
       await sleep(1000);
@@ -132,8 +146,6 @@ window.onload = (e) => {
       i++;
     }
   }
-
-
 
   function adjustCanvas() {
     canvas.setAttribute("height", canvas.clientHeight);
