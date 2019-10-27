@@ -19,6 +19,15 @@ window.onload = (e) => {
     pointerEvents: "none"
   };
 
+  const nonRandomPoints = [
+    {x: 0.15, y: 0.15},
+    {x: 0.20, y: 0.15},
+    {x: 0.30, y: 0.15},
+    {x: 0.40, y: 0.15},
+    {x: 0.60, y: 0.15},
+    {x: 0.80, y: 0.15}
+  ];
+
   let context;
 
   for (const style in styles) {
@@ -107,15 +116,17 @@ window.onload = (e) => {
     const height = canvas.clientHeight;
     let i = 0;
 
-    revealCircle({
-      point: [0.15 * width, 0.15 * height],
-      duration: 3000,
-      spawn: 0,
-      color: randomColor(),
-      radius: 210
-    }, true);
-
-    await sleep(1000);
+    for (const {x, y} of nonRandomPoints) {
+      revealCircle({
+        point: [x * width, y * height],
+        duration: 3000,
+        spawn: 0,
+        color: randomColor(),
+        radius: 210
+      }, true);
+  
+      await sleep(1000);
+    }
 
     for (const [x, y] of randomPoints(width, height)) {
       if (!document.hidden) {
