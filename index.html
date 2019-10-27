@@ -11,8 +11,16 @@
 		</script>
 		<script type="text/javascript" src="index.js"></script>
 		<style type="text/css">
+		
 			#app, #background {
 				position: absolute;
+			}
+
+			.app-content {
+				max-width: 800px;
+
+				margin-left: auto;
+				margin-right: auto;
 			}
 
 			ul {
@@ -34,6 +42,8 @@
 
 			#app {
 				z-index: 3;
+
+				width: 100%;
 			}
 
 			.work-offerings {
@@ -50,6 +60,8 @@
 				margin-top: 10px;
 				margin-bottom: 30px;
 				background-color: rgba(233, 236, 239, 0.8);
+
+				box-shadow: 0px 0px 3px lightgray;
 			}
 
 			img.profile-image {
@@ -61,12 +73,14 @@
 			}
 
 			.contact-badge {
-				background-color: rgba(255,255,255, 0.8);
+				background-color: rgba(233, 236, 239, 0.8);
 				display: inline-block;
 				padding: 5px;
 				border-radius: 5px;
 				text-align: left;
 				margin-bottom: 5px;
+
+				box-shadow: 0px 0px 3px lightgray;
 			}
 
 			#app .col-sm-3 {
@@ -80,13 +94,16 @@
 			}
 
 			#title {
-				animation-name: bnw;
+				/* animation-name: bnw;
 				animation-duration: 10s;
 				animation-delay: 6s;
-				animation-iteration-count: infinite;
+				animation-iteration-count: infinite; */
+
+				color: rgba(233, 236, 239, 0.8);
+				text-shadow: 0px 0px 3px gray;
 			}
 
-			@media only screen and (min-width: 768px) {
+			@media only screen and (min-width: 992px) {
 				.contact-badge {
 					border-top-right-radius: 0px; 
 					border-top-left-radius: 0px;
@@ -104,221 +121,229 @@
 			<canvas>
 			</canvas>
 		</div>
-		<div id="app" class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<h1 id="title">Gabriel Ratener</h1>
+		<div id="app">
+			<div class="container app-content">
+				<div class="row">
+					<div class="col-lg-6">
+						<h1 id="title">Gabriel Ratener</h1>
+					</div>
+					<div class="col-lg-3">
+						<span class="contact-badge float-lg-right">
+							<span class="font-weight-bold">Phone</span>
+							<br>
+							<span><a href="tel:4254637382">(425) 463 - 7382</a></span>
+						</span>
+					</div>
+					<div class="col-lg-3">
+						<span class="contact-badge float-lg-right">
+							<span class="font-weight-bold">Email</span>
+							<br>
+							<span><a href="mailto:gabe9693@gmail.com">gabe9693@gmail.com</a></span>
+						</span>
+					</div>
 				</div>
-				<div class="col-sm-3">
-					<span class="contact-badge">
-						<span class="font-weight-bold">Phone</span>
-						<br>
-						<span><a href="tel:4254637382">(425) 463 - 7382</a></span>
-					</span>
-				</div>
-				<div class="col-sm-3">
-					<span class="contact-badge">
-						<span class="font-weight-bold">Email</span>
-						<br>
-						<span><a href="mailto:gabe9693@gmail.com">gabe9693@gmail.com</a></span>
-					</span>
-				</div>
-			</div>
-			<div class="jumbotron">
-				<h2>About</h2>
-				<p>
-					<img class="profile-image" src="images/gabe4.jpg" />
-					<span>
-						I'm Gabe, a 26 year-old freelance software developer based out of Seattle.
-						I completed my BS in Atmospheric Science and Math in 2014, and my Masters in Computer Science in 2017.
+				<div class="row">
+					<div class="col-lg-12">
 
-						During my college years I began freelancing and working on small websites for multiple clients.
-						I also taught math and programming to K-12 students over the summer.
-
-						After graduating in 2017, I became lead front-end developer at the
-						Kirkland-based children's event networking startup <a href="https://www.socialrugrats.com/">Social Rugrats</a> for the better part of a year.
-
-						After leaving my job I traveled around Mexico and Central America for several months, while working various odd jobs.
-
-						Since July 2018 I've been the lead software developer at <a href="https://klikboks.com" target="blank">KLIK Communications</a>, a Bellevue-based startup
-						developing next-generation wireless projectors and collaboration technologies.
-					</span>
-				</p>
-
-				<!-- <h2>What I do</h2>
-				<p>
-					Here are some things and services I can offer.
-				</p>
-
-				<p>
-					<ul class="list-group work-offerings">
-						<li class="list-group-item">
-							<h4 class="list-group-item-heading">Women's Coding Workshop</h4>
-							<p class="list-group-item-text">
-								I host a women's coding workshops twice a week at SoulFood Books in Redmond.
-								Currently meeting times are Wednesdays and Saturdays at 6PM.
-								Meetings will start when we have 12 members signed up, so please do sign up!
-							</p>
-						</li>
-
-						<li class="list-group-item">
-							<h4 class="list-group-item-heading">Web Development</h4>
-							<p class="list-group-item-text">
-								If you're interested in developing a site from scratch or making changes to an existing site, I can do it! I generally charge $45 an hour, but for some projects I may be able to charge a flat rate.
-							</p>
-						</li>
-
-						<li class="list-group-item">
-							<h4 class="list-group-item-heading">Web Scraping</h4>
-							<p class="list-group-item-text">
-								Sometimes you may wish to extract and aggregate information or data displayed on websites for various uses.
-								If you have a need for this, I'm the guy! I've worked on a number of scraping projects. Since scraping projects are typically small I typically charge a flat rate.
-							</p>
-						</li>
-						<li class="list-group-item">
-							<h4 class="list-group-item-heading">Domain Specific Languages</h4>
-							<p class="list-group-item-text">
-								I developed a programming language as my Masters thesis, and I've authored numerous parsing-related tools, such as <a href="https://github.com/gabrielratener/crane-parser" target="blank">Crane Parser</a>.
-								For programming language and parser development I typically charge around $60 per hour of work.
-							</p>
-						</li>
-					</ul>
-				</p> -->
-
-				<h2>Education</h2>
-				<p>
-					<ul class="education-list">
-						<li>
-							<h4>University of Washington</h4>
-							<span>BS in Atmospheric Sciences</span>
-							<span class="text-secondary">(2011 - 2014)</span>
-						</li>
-						<li>
-							<h4>Central Washington University</h4>
-							<span>MS in Computer Science</span>
-							<span class="text-secondary">(2014 - 2017)</span>
-						</li>
-					</ul>
-				</p>
-
-
-				<h2>Skills</h2>
-				<p>
-					<ul>
-						<li>Writing Parsers</li>
-						<li>Building Electron Apps</li>
-						<li>Web Development</li>
-						<li>Vue Framework</li>
-						<li>Node.JS</li>
-						<li>Service-based architectures and SPAs</li>
-						<li>JavaScript!</li>
-						<li>HTML5, CSS3, Jade/Pug, SCSS, and more...</li>
-						<li>Next-gen protocols (e.g. WebSockets, WebRTC)</li>
-						<li>Web Scraping</li>
-					</ul>
-				</p>
-
-				<h2>Projects</h2>
-				<p>
-					<ul class="list-group work-offerings">
-						<li class="list-group-item">
-							<h4 class="list-group-item-heading">Professional</h4>
-							<ul>
-								<li>
-									<a
-										target="blank"
-										href="https://michaelgreenusa.com"
-										>
-										Michael Green
-									</a>
-									<p>
-										An online store for designer hand-bags.
-									</p>
-								</li>
-								<li>
-									<a
-										target="blank"
-										href="https://socialrugrats.com"
-										>
-										Social Rugrats
-									</a>
-									<p>
-										The online platform for finding and hosting playdates and kids events.
-									</p>
-								</li>
-								<li>
-									<a
-										target="blank"
-										href="https://www.klikboks.com/klik-store/KLIKManager-Central-Management-System-Application-c31805007"
-										>
-										KLIK Manager
-									</a>
-									<p>
-										The administrator application that manages all KLIK Devices on your network.
-									</p>
-								</li>
-								<li>
-									<a
-										target="blank"
-										href="https://www.klikboks.com/setup"
-										>
-										KLIK Setup Wizard
-									</a>
-									<p>
-										The tool that discovers and sets up your KLIK Devices in under a minute.
-									</p>
-								</li>	
-								<li>
-									<a
-										target="blank"
-										href="https://www.klikboks.com/klik-management#comp-jv4azs80inlineContent"
-										>
-										KLIK Control Center
-									</a>
-									<p>
-										The web portal to each KLIK Device that allows you to
-										view presentations and manage without installing an app.
-									</p>
-								</li>	
-							</ul>
-						</li>
-						<li class="list-group-item">
-							<h4 class="list-group-item-heading">Other Projects</h4>
-							<ul>
-								<li>
-									<a
-										target="blank"
-										href="https://github.com/defscript/defscript-core"
-										>
-										DefScript
-									</a>
-									<p>
-										An extensible compile-to-JS language that supports macros and
-										embedded languages through a simple plugin API.
-									</p>
-								</li>
-								<li>
-									<a
-										target="blank"
-										href="https://github.com/GabrielRatener/crane-parser"
-										>
-										Crane Parser
-									</a>
-									<p>
-										A parser-generator with a clean, advanced syntax for describing grammars, that
-										generates simple, clean, push-based parsers as ES6 modules.
-									</p>
-								</li>
-							</ul>
+						<div class="jumbotron">
+							<h2>About</h2>
 							<p>
-								To see more projects visit my Github at
-								<a target="blank" href="https://github.com/GabrielRatener">github.com/GabrielRatener</a>.
+								<img class="profile-image" src="images/gabe4.jpg" />
+								<span>
+									I'm Gabe, a 26 year-old freelance software developer based out of Seattle.
+									I completed my BS in Atmospheric Science and Math in 2014, and my Masters in Computer Science in 2017.
+			
+									During my college years I began freelancing and working on small websites for multiple clients.
+									I also taught math and programming to K-12 students over the summer.
+			
+									After graduating in 2017, I became lead front-end developer at the
+									Kirkland-based children's event networking startup <a href="https://www.socialrugrats.com/">Social Rugrats</a> for the better part of a year.
+			
+									After leaving my job I traveled around Mexico and Central America for several months, while working various odd jobs.
+			
+									Since July 2018 I've been the lead software developer at <a href="https://klikboks.com" target="blank">KLIK Communications</a>, a Bellevue-based startup
+									developing next-generation wireless projectors and collaboration technologies.
+								</span>
 							</p>
-						</li>
-					</ul>
-				</p>
+			
+							<!-- <h2>What I do</h2>
+							<p>
+								Here are some things and services I can offer.
+							</p>
+			
+							<p>
+								<ul class="list-group work-offerings">
+									<li class="list-group-item">
+										<h4 class="list-group-item-heading">Women's Coding Workshop</h4>
+										<p class="list-group-item-text">
+											I host a women's coding workshops twice a week at SoulFood Books in Redmond.
+											Currently meeting times are Wednesdays and Saturdays at 6PM.
+											Meetings will start when we have 12 members signed up, so please do sign up!
+										</p>
+									</li>
+			
+									<li class="list-group-item">
+										<h4 class="list-group-item-heading">Web Development</h4>
+										<p class="list-group-item-text">
+											If you're interested in developing a site from scratch or making changes to an existing site, I can do it! I generally charge $45 an hour, but for some projects I may be able to charge a flat rate.
+										</p>
+									</li>
+			
+									<li class="list-group-item">
+										<h4 class="list-group-item-heading">Web Scraping</h4>
+										<p class="list-group-item-text">
+											Sometimes you may wish to extract and aggregate information or data displayed on websites for various uses.
+											If you have a need for this, I'm the guy! I've worked on a number of scraping projects. Since scraping projects are typically small I typically charge a flat rate.
+										</p>
+									</li>
+									<li class="list-group-item">
+										<h4 class="list-group-item-heading">Domain Specific Languages</h4>
+										<p class="list-group-item-text">
+											I developed a programming language as my Masters thesis, and I've authored numerous parsing-related tools, such as <a href="https://github.com/gabrielratener/crane-parser" target="blank">Crane Parser</a>.
+											For programming language and parser development I typically charge around $60 per hour of work.
+										</p>
+									</li>
+								</ul>
+							</p> -->
+			
+							<h2>Education</h2>
+							<p>
+								<ul class="education-list">
+									<li>
+										<h4>University of Washington</h4>
+										<span>BS in Atmospheric Sciences</span>
+										<span class="text-secondary">(2011 - 2014)</span>
+									</li>
+									<li>
+										<h4>Central Washington University</h4>
+										<span>MS in Computer Science</span>
+										<span class="text-secondary">(2014 - 2017)</span>
+									</li>
+								</ul>
+							</p>
+			
+			
+							<h2>Skills</h2>
+							<p>
+								<ul>
+									<li>Writing Parsers</li>
+									<li>Building Electron Apps</li>
+									<li>Web Development</li>
+									<li>Vue Framework</li>
+									<li>Node.JS</li>
+									<li>Service-based architectures and SPAs</li>
+									<li>JavaScript!</li>
+									<li>HTML5, CSS3, Jade/Pug, SCSS, and more...</li>
+									<li>Next-gen protocols (e.g. WebSockets, WebRTC)</li>
+									<li>Web Scraping</li>
+								</ul>
+							</p>
+			
+							<h2>Projects</h2>
+							<p>
+								<ul class="list-group work-offerings">
+									<li class="list-group-item">
+										<h4 class="list-group-item-heading">Professional</h4>
+										<ul>
+											<li>
+												<a
+													target="blank"
+													href="https://michaelgreenusa.com"
+													>
+													Michael Green
+												</a>
+												<p>
+													An online store for designer hand-bags.
+												</p>
+											</li>
+											<li>
+												<a
+													target="blank"
+													href="https://socialrugrats.com"
+													>
+													Social Rugrats
+												</a>
+												<p>
+													The online platform for finding and hosting playdates and kids events.
+												</p>
+											</li>
+											<li>
+												<a
+													target="blank"
+													href="https://www.klikboks.com/klik-store/KLIKManager-Central-Management-System-Application-c31805007"
+													>
+													KLIK Manager
+												</a>
+												<p>
+													The administrator application that manages all KLIK Devices on your network.
+												</p>
+											</li>
+											<li>
+												<a
+													target="blank"
+													href="https://www.klikboks.com/setup"
+													>
+													KLIK Setup Wizard
+												</a>
+												<p>
+													The tool that discovers and sets up your KLIK Devices in under a minute.
+												</p>
+											</li>	
+											<li>
+												<a
+													target="blank"
+													href="https://www.klikboks.com/klik-management#comp-jv4azs80inlineContent"
+													>
+													KLIK Control Center
+												</a>
+												<p>
+													The web portal to each KLIK Device that allows you to
+													view presentations and manage without installing an app.
+												</p>
+											</li>	
+										</ul>
+									</li>
+									<li class="list-group-item">
+										<h4 class="list-group-item-heading">Other Projects</h4>
+										<ul>
+											<li>
+												<a
+													target="blank"
+													href="https://github.com/defscript/defscript-core"
+													>
+													DefScript
+												</a>
+												<p>
+													An extensible compile-to-JS language that supports macros and
+													embedded languages through a simple plugin API.
+												</p>
+											</li>
+											<li>
+												<a
+													target="blank"
+													href="https://github.com/GabrielRatener/crane-parser"
+													>
+													Crane Parser
+												</a>
+												<p>
+													A parser-generator with a clean, advanced syntax for describing grammars, that
+													generates simple, clean, push-based parsers as ES6 modules.
+												</p>
+											</li>
+										</ul>
+										<p>
+											To see more projects visit my Github at
+											<a target="blank" href="https://github.com/GabrielRatener">github.com/GabrielRatener</a>.
+										</p>
+									</li>
+								</ul>
+							</p>
+						</div>		
+
+					</div>
+				</div>
 			</div>
-		</div>
+		<div>
 	</body>
 </html>
 
