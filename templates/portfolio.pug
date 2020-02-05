@@ -1,0 +1,12 @@
+
+extends layout.pug
+
+block content
+  ul#portfolio.list-unstyled
+    each project in portfolio.projects
+      li
+        a.link-unstyled(target="blank", href=project.link)
+          img.portfolio(src=fn.portfolioImage(project.image))
+          .description(class=(project.dark ? 'dark' : 'light'))
+            h4 #{project.title}
+            p #{project.description}

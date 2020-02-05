@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/GabrielRatener/gabrielratener.github.io#readme",
   "dependencies": {
-    "rollup-plugin-vue": "^4.2.0",
-    "vue-template-compiler": "^2.5.16"
+    "js-yaml": "^3.13.1",
+    "pug": "^2.0.4"
   }
 }
