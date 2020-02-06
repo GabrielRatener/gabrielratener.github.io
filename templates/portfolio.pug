@@ -4,7 +4,7 @@ extends layout.pug
 block content
   ul#portfolio.list-unstyled
     each project in portfolio.projects
-      li
+      li.shaddow-box
         a.link-unstyled(target="blank", href=project.link)
           img.portfolio(src=fn.portfolioImage(project.image))
           .description(class=(project.dark ? 'dark' : 'light'))

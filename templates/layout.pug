@@ -20,6 +20,19 @@ html(lang="en")
 
     link(rel="stylesheet", href="styles.css")
 
+    script(
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    )
+
+    script(
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    )
+
+
     script(src="https://www.googletagmanager.com/gtag/js?id=UA-150971009-2")
     script(src="js/ga.js")
     script(src="js/index.js")
@@ -29,13 +42,29 @@ html(lang="en")
     #background
       canvas
     #app
-      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      nav.navbar.navbar-expand-lg.navbar-light.shaddow-box
         a.navbar-brand(href="/") Gabriel Ratener
-        .navbar-collapse.collapse
-          ul.navbar-nav.mr-auto
+        button.navbar-toggler(
+          type="button"
+          data-toggle="collapse"
+          data-target="#thenavigation"
+          aria-controls="thenavigation"
+          aria-expanded="false"
+          aria-label="Expand Navigation"
+        )
+          span.navbar-toggler-icon
+        #thenavigation.navbar-collapse.collapse
+          ul.navbar-nav.ml-auto
             each route in navigation
               li.nav-item
                 a.nav-link(href=route.link) #{route.title}
+                a(href=route.link)
+                  .shoe.d-none.d-lg-block(
+                    class=(route.name === name ? 'active' : 'inactive')
+                  )
       
-      .app-content.jumbotron
-        block content
+      .app-content.jumbotron.shaddow-box
+        h1.text-center #{title}
+        br
+        div
+          block content

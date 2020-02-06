@@ -92,14 +92,17 @@ const months = [
 
 const navigation = [
     {
+        name: 'resume',
         title: 'Resume',
         link: 'resume.html'
     },
     {
+        name: 'portfolio',
         title: 'Portfolio',
         link: 'portfolio.html'
     },
     {
+        name: 'contact',
         title: 'Contact',
         link: 'contact.html'
     }

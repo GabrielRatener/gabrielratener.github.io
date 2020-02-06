@@ -1,8 +1,62 @@
 
+@font-face {
+    font-family: HikouInline;
+    src: url("fonts/hikou/Hikou Inline.otf");
+}
+
+@font-face {
+    font-family: HikouRegular;
+    src: url("fonts/hikou/Hikou Regular.otf");
+}
+
+.shaddow-box {
+    box-shadow: 0px 0px 5px #888;
+}
+
+.navbar-brand {
+    font-family: HikouInline;
+    font-size: calc(4vw + 16px);
+}
+
+@media screen and (min-width: 1200px) {
+    .navbar-brand {
+        font-size: 60px;
+    }
+}
+
+h1, h2, h3, h4 {
+    font-family: HikouInline;
+}
+
 .link-unstyled, .link-unstyled:link, .link-unstyled:hover {
     color: inherit;
     text-decoration: inherit;
 }
+
+li.nav-item {
+    position: relative;
+    font-family: HikouRegular;
+    font-size: 20px;
+}
+
+li.nav-item:hover .shoe.inactive {
+    background-color: gray;
+    transition: background-color 0.25s;
+}
+
+.shoe {
+    position: absolute;
+
+    top: 40px;
+
+    height: 20px;
+    width: 100%;
+}
+
+.shoe.active {
+    background-color: black;
+}
+
 
 ul {
     /* list-style-type: circle; */
@@ -34,6 +88,11 @@ ul.spaced > li {
 nav {
     max-width: 800px !important;
     margin: auto;
+    background-color: #ffffff88 !important;
+}
+
+.navbar-toggler {
+    border: none;
 }
 
 .app-content {
@@ -62,7 +121,8 @@ img.profile {
     display: inline-block;
     margin: 5px;
 
-    box-shadow: 0px 0px 5px #888;
+    max-width: calc(100% - 10px);
+    overflow: hidden;
 }
 
 img.portfolio {
@@ -94,4 +154,5 @@ img.portfolio {
 .description:hover {
     backdrop-filter: blur(0px);
     opacity: 0.0;
+    transition: opacity 0.5s;
 }
