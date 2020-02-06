@@ -97,7 +97,15 @@ img.profile {
   overflow: hidden; }
 
 img.portfolio {
-  height: 200px; }
+  height: 200px;
+  object-fit: cover;
+  object-position: center; }
+
+@media screen and (max-width: 600px) {
+  #portfolio li {
+    width: 100%; }
+  img.portfolio {
+    width: 100% !important; } }
 
 .description {
   position: absolute;
