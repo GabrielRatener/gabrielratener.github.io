@@ -1,0 +1,19 @@
+
+list:
+  - title: "Building Websites"
+    rate: 25
+    description: |
+      I have an eight year history of delivering websites
+      both small and large.
+
+  - title: "Screen Scraping"
+    rate: 25
+    description: |
+      Are you in-need of software to reliably extract
+      data from web pages?
+
+  - title: "App Development"
+    rate: 35
+    description: |
+      I can develop cross-platform apps in Flutter that run
+      on both Android and IOS devices.

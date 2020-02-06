@@ -1,0 +1,158 @@
+
+@font-face {
+    font-family: HikouInline;
+    src: url("fonts/hikou/Hikou Inline.otf");
+}
+
+@font-face {
+    font-family: HikouRegular;
+    src: url("fonts/hikou/Hikou Regular.otf");
+}
+
+.shaddow-box {
+    box-shadow: 0px 0px 5px #888;
+}
+
+.navbar-brand {
+    font-family: HikouInline;
+    font-size: calc(4vw + 16px);
+}
+
+@media screen and (min-width: 1200px) {
+    .navbar-brand {
+        font-size: 60px;
+    }
+}
+
+h1, h2, h3, h4 {
+    font-family: HikouInline;
+}
+
+.link-unstyled, .link-unstyled:link, .link-unstyled:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+li.nav-item {
+    position: relative;
+    font-family: HikouRegular;
+    font-size: 20px;
+}
+
+li.nav-item:hover .shoe.inactive {
+    background-color: gray;
+    transition: background-color 0.25s;
+}
+
+.shoe {
+    position: absolute;
+
+    top: 40px;
+
+    height: 20px;
+    width: 100%;
+}
+
+.shoe.active {
+    background-color: black;
+}
+
+
+ul {
+    /* list-style-type: circle; */
+    list-style-image: url('./images/star.png');
+}
+
+ul.lightning {
+    list-style-image: url('./images/lightning.png');
+}
+
+ul.beehive {
+    list-style-image: url('./images/beehive.png');
+}
+
+ul.spaced > li {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#background, #background canvas {
+    z-index: -1 !important;
+}
+
+#app {
+    z-index: 1;
+    padding: 20px;
+}
+
+nav {
+    max-width: 800px !important;
+    margin: auto;
+    background-color: #ffffff88 !important;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.app-content {
+    max-width: 800px;
+    margin: auto;
+    background-color: #ffffff88;
+
+    margin-top: 50px !important;
+
+    border-radius: 0px;
+}
+
+img.profile {
+    float: right;
+    border-radius: 50%;
+    height: 150px;
+}
+
+
+#portfolio {
+    text-align: center;
+}
+
+#portfolio li {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+
+    max-width: calc(100% - 10px);
+    overflow: hidden;
+}
+
+img.portfolio {
+    height: 200px;
+}
+
+.description {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    text-align: left;
+
+    bottom: 0;
+    left: 0;
+
+    padding: 5px;
+
+    background-color: #ffffff88;
+
+    backdrop-filter: blur(2px);
+}
+
+.description.dark {
+    background-color: #00000088;
+    color: white;
+}
+
+.description:hover {
+    backdrop-filter: blur(0px);
+    opacity: 0.0;
+    transition: opacity 0.5s;
+}

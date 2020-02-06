@@ -1,0 +1,36 @@
+
+extends layout.pug
+
+block content
+  //- h2 About
+  //- img.profile(src=resume.image)
+  //- p #{resume.about}
+
+  h2 Education
+  ul.spaced
+    each degree in resume.education.degrees
+      li
+        h4 #{degree.school}
+        span #{degree.degree}
+        small.text-muted  (#{fn.dateRange(degree.dates)})
+  
+  h2 Employment
+  ul.spaced
+    each job in resume.employment.jobs
+      li
+        a.font-weight-bold(target="blank", href=job.link) #{job.company} 
+        small.text-muted (#{fn.dateRange(job.dates)})
+        if job.overview
+          p #{job.overview}
+        if job.duties.length > 0
+          ul.beehive
+            each duty in job.duties
+              li #{duty}
+
+  h2 Skills
+  p #{resume.skills.overview}
+  ul
+    each skill in resume.skills.list
+      li #{skill}
+
+            

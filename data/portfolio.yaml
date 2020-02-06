@@ -1,0 +1,94 @@
+
+overview: "I have worked on a lot of projects"
+projects:
+  - title: "Michael Green"
+    type: "professional"
+    role: "author"
+    link: "https://michaelgreenusa.com"
+    image: "michaelgreen.png"
+    description: |
+      An online store for designer hand-bags.
+
+  - title: "iSalesCRM"
+    type: "professional"
+    role: "contributor"
+    link: "https://isalescrm.io"
+    image: "isalescrm.png"
+    description: |
+      A cloud-based CRM for managing
+      leads and inbound calls.
+
+  - title: "Social Rugrats"
+    type: "professional"
+    role: "contributor"
+    link: "https://socialrugrats.com"
+    image: "socialrugrats.png"
+    description: |
+      The online platform for finding and
+      hosting playdates and kids events.
+
+  - title: KLIK Setup Wizard
+    type: "professional"
+    role: "author"
+    link: "https://klikboks.com/setup"
+    image: "klikwizard.png"
+    description: |
+      The tool that discovers and sets up your
+      KLIK Devices in under a minute.
+
+  - title: KLIK Manager
+    type: "professional"
+    role: "author"
+    link: "https://klikboks.com/klik-manager"
+    image: "klikmanager.png"
+    description: |
+      The administrator application that manages
+      all KLIK Devices on your network.
+
+  - title: KLIK Control Center
+    type: "professional"
+    role: "author"
+    link: "https://klikboks.com/klik-control-center"
+    image: "klikcontrolcenter.png"
+    description: |
+      The web portal to each KLIK Device that allows you to
+      view presentations and manage without installing an app.
+
+  - title: DefScript
+    type: "foss"
+    role: "author"
+    link: "https://github.com/defscript/defscript-core"
+    image: "defscript.png"
+    description: |
+      An extensible compile-to-JS language that
+      supports macros and embedded languages through
+      a simple plugin API.
+    dark: true
+
+  - title: Crane Parser
+    type: "foss"
+    role: "author"
+    link: "https://github.com/gabrielratener/crane-parser"
+    image: "craneparser.png"
+    description: |
+      A parser-generator with a clean, advanced syntax
+      for describing grammars, that generates simple,
+      clean, push-based parsers as ES6 modules.
+
+  - title: CoffeeScript
+    type: "foss"
+    role: "contributor"
+    link: "https://coffeescript.org"
+    image: "coffeescript.png"
+    description: |
+      The mother of all compile-to-JS languages.
+      I added async/await syntax to the language to
+      better support async programming.
+
+  - title: Bizubee
+    type: "foss"
+    role: "author"
+    link: "https://bizubee.github.io"
+    image: "bizubee.png"
+    description: |
+      The most intense programming language on Earth!
