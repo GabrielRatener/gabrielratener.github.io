@@ -83,6 +83,9 @@ img.profile {
   border-radius: 50%;
   height: 150px; }
 
+#portfolio {
+  text-align: center; }
+
 #portfolio li {
   position: relative;
   display: inline-block;
