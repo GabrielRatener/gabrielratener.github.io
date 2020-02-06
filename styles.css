@@ -6,16 +6,19 @@
   font-family: HikouRegular;
   src: url("fonts/hikou/Hikou Regular.otf"); }
 
+img.qr {
+  max-width: 100%; }
+
 .shaddow-box {
   box-shadow: 0px 0px 5px #888; }
 
 .navbar-brand {
   font-family: HikouInline;
-  font-size: calc(4vw + 16px); }
+  font-size: calc(5vw + 8px); }
 
 @media screen and (min-width: 1200px) {
   .navbar-brand {
-    font-size: 60px; } }
+    font-size: 64px; } }
 
 h1, h2, h3, h4 {
   font-family: HikouInline; }
