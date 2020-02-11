@@ -1,37 +1,15 @@
 
 window.onload = (e) => {
+  
   const {floor, round, random, abs, sin, cos, atan} = Math;
 
-  const 
-    circumference = 2 * Math.PI,
-    canvas = document.querySelector('#background canvas');
+  const makeVisible = () => {
 
-  const styles = {
-    margin: "0px",
-    padding: "0px",
-    border: "none",
-    height: "100%",
-    width: "100%",
-    position: "fixed",
-    top: "0px",
-    left: "0px",
-    zIndex: "100",
-    pointerEvents: "none"
-  };
-
-  const nonRandomPoints = [
-    {x: 0.15, y: 0.15},
-    {x: 0.20, y: 0.15},
-    {x: 0.30, y: 0.15},
-    {x: 0.40, y: 0.15},
-    {x: 0.60, y: 0.15},
-    {x: 0.80, y: 0.15}
-  ];
-
-  let context;
-
-  for (const style in styles) {
-    canvas.style[style] = styles[style];
+    document
+      .getElementById('background')
+      .style
+      .display = 'block'
+      ;
   }
 
   const randomColor = (alpha = 0.04) => {
@@ -158,14 +136,47 @@ window.onload = (e) => {
     }
   }
 
-  function adjustCanvas() {
+  const adjustCanvas = () => {
     canvas.setAttribute("height", canvas.clientHeight);
     canvas.setAttribute("width", canvas.clientWidth);
     context = canvas.getContext("2d");
   }
 
+  const 
+    circumference = 2 * Math.PI,
+    canvas = document.querySelector('#background canvas');
+
+  const styles = {
+    margin: "0px",
+    padding: "0px",
+    border: "none",
+    height: "100%",
+    width: "100%",
+    position: "fixed",
+    top: "0px",
+    left: "0px",
+    zIndex: "100",
+    pointerEvents: "none"
+  };
+
+  const nonRandomPoints = [
+    {x: 0.15, y: 0.15},
+    {x: 0.20, y: 0.15},
+    {x: 0.30, y: 0.15},
+    {x: 0.40, y: 0.15},
+    {x: 0.60, y: 0.15},
+    {x: 0.80, y: 0.15}
+  ];
+
+  let context;
+
+  for (const style in styles) {
+    canvas.style[style] = styles[style];
+  }
+
   window.onresize = adjustCanvas;
 
+  makeVisible();
   adjustCanvas();
   render(30);
   // flickTitle();
