@@ -179,5 +179,6 @@ window.onload = (e) => {
   makeVisible();
   adjustCanvas();
   render(30);
+
   // flickTitle();
 }
