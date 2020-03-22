@@ -120,6 +120,24 @@ img.portfolio {
   padding: 5px;
   background-color: #ffffff88;
   backdrop-filter: blur(2px); }
+  .description .chip-container {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 5px; }
+    .description .chip-container .badge {
+      margin-right: 4px;
+      margin-top: 4px; }
+      .description .chip-container .badge img {
+        border-width: 2px;
+        border-style: solid; }
+      .description .chip-container .badge.light {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: black; }
+      .description .chip-container .badge.dark {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white; }
 
 .description.dark {
   background-color: #00000088;
