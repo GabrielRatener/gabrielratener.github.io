@@ -151,3 +151,14 @@ img.portfolio {
 footer {
   margin-top: 75px;
   text-align: center; }
+
+a.github-corner {
+  display: block;
+  position: fixed;
+  top: 0px; }
+  a.github-corner.left {
+    left: 0px; }
+  a.github-corner.right {
+    right: 0px; }
+  a.github-corner img {
+    width: 85px; }
