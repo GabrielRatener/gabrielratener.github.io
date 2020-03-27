@@ -88,6 +88,14 @@ img.profile {
   float: right;
   border-radius: 50%;
   height: 150px; }
+  img.profile.large {
+    height: 175px; }
+  img.profile.xtra-large {
+    height: 200px; }
+  img.profile.small {
+    height: 125px; }
+  img.profile.xtra-small {
+    height: 100px; }
 
 #portfolio {
   text-align: center; }
@@ -162,3 +170,23 @@ a.github-corner {
     right: 0px; }
   a.github-corner img {
     width: 85px; }
+
+.space-box {
+  display: flex;
+  justify-content: space-between; }
+
+@media screen {
+  .print-only {
+    display: none !important; } }
+
+@media print {
+  .print-omit {
+    display: none !important; }
+  #resume-page {
+    overflow-y: hidden; }
+    #resume-page .app-content {
+      height: 100%;
+      width: 100%;
+      max-width: 100%; }
+    #resume-page a {
+      text-decoration: none; } }
