@@ -189,4 +189,6 @@ a.github-corner {
       width: 100%;
       max-width: 100%; }
     #resume-page a {
-      text-decoration: none; } }
+      text-decoration: none; }
+  body {
+    height: 95%; } }
