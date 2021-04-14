@@ -99,6 +99,10 @@ img.profile {
 
 #portfolio {
   text-align: center; }
+  #portfolio img.image-t0 {
+    width: calc(0.45 * 800px); }
+  #portfolio img.image-t1 {
+    width: calc(0.35 * 800px); }
 
 #portfolio li {
   position: relative;
