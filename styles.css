@@ -1,127 +1,160 @@
 @font-face {
   font-family: HikouInline;
-  src: url("fonts/hikou/Hikou Inline.otf"); }
-
+  src: url("fonts/hikou/Hikou Inline.otf");
+}
 @font-face {
   font-family: HikouRegular;
-  src: url("fonts/hikou/Hikou Regular.otf"); }
-
+  src: url("fonts/hikou/Hikou Regular.otf");
+}
 img.qr {
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 .shaddow-box {
-  box-shadow: 0px 0px 5px #888; }
+  box-shadow: 0px 0px 5px #888;
+}
 
 .navbar-brand {
   font-family: HikouInline;
-  font-size: calc(5vw + 8px); }
+  font-size: calc(5vw + 8px);
+}
 
 @media screen and (min-width: 1200px) {
   .navbar-brand {
-    font-size: 64px; } }
-
+    font-size: 64px;
+  }
+}
 h1, h2, h3, h4 {
-  font-family: HikouInline; }
+  font-family: HikouInline;
+}
 
 .link-unstyled, .link-unstyled:link, .link-unstyled:hover {
   color: inherit;
-  text-decoration: inherit; }
+  text-decoration: inherit;
+}
 
 li.nav-item {
   position: relative;
   font-family: HikouRegular;
-  font-size: 20px; }
+  font-size: 20px;
+}
 
 li.nav-item:hover .shoe.inactive {
   background-color: gray;
-  transition: background-color 0.25s; }
+  transition: background-color 0.25s;
+}
 
 .shoe {
   position: absolute;
   top: 40px;
   height: 20px;
-  width: 100%; }
+  width: 100%;
+}
 
 .shoe.active {
-  background-color: black; }
+  background-color: black;
+}
 
 ul {
   /* list-style-type: circle; */
-  list-style-image: url("./images/star.png"); }
+  list-style-image: url("./images/star.png");
+}
 
 ul.lightning {
-  list-style-image: url("./images/lightning.png"); }
+  list-style-image: url("./images/lightning.png");
+}
 
 ul.beehive {
-  list-style-image: url("./images/beehive.png"); }
+  list-style-image: url("./images/beehive.png");
+}
 
 ul.spaced > li {
   margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+}
 
 #background {
-  display: none; }
+  display: none;
+}
 
 #background, #background canvas {
-  z-index: -1 !important; }
+  z-index: -1 !important;
+}
 
 #app {
   z-index: 1;
-  padding: 20px; }
+  padding: 20px;
+}
 
 nav {
   max-width: 800px !important;
   margin: auto;
-  background-color: #ffffff88 !important; }
+  background-color: #ffffff88 !important;
+}
 
 .navbar-toggler {
-  border: none; }
+  border: none;
+}
 
 .app-content {
   max-width: 800px;
   margin: auto;
   background-color: #ffffff88;
   margin-top: 25px !important;
-  border-radius: 0px; }
+  border-radius: 0px;
+}
 
 img.profile {
   float: right;
   border-radius: 50%;
-  height: 150px; }
-  img.profile.large {
-    height: 175px; }
-  img.profile.xtra-large {
-    height: 200px; }
-  img.profile.small {
-    height: 125px; }
-  img.profile.xtra-small {
-    height: 100px; }
+  height: 150px;
+}
+img.profile.large {
+  height: 175px;
+}
+img.profile.xtra-large {
+  height: 200px;
+}
+img.profile.small {
+  height: 125px;
+}
+img.profile.xtra-small {
+  height: 100px;
+}
 
 #portfolio {
-  text-align: center; }
-  #portfolio img.image-t0 {
-    width: calc(0.45 * 800px); }
-  #portfolio img.image-t1 {
-    width: calc(0.35 * 800px); }
+  text-align: center;
+}
+#portfolio img.image-t0 {
+  width: calc(0.45 * 800px);
+}
+#portfolio img.image-t1 {
+  width: calc(0.35 * 800px);
+}
 
 #portfolio li {
   position: relative;
   display: inline-block;
   margin: 5px;
   max-width: calc(100% - 10px);
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 img.portfolio {
   height: 200px;
   object-fit: cover;
-  object-position: center; }
+  object-position: center;
+}
 
 @media screen and (max-width: 600px) {
   #portfolio li {
-    width: 100%; }
-  img.portfolio {
-    width: 100% !important; } }
+    width: 100%;
+  }
 
+  img.portfolio {
+    width: 100% !important;
+  }
+}
 .description {
   position: absolute;
   width: 100%;
@@ -131,68 +164,96 @@ img.portfolio {
   left: 0;
   padding: 5px;
   background-color: #ffffff88;
-  backdrop-filter: blur(2px); }
-  .description .chip-container {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    padding: 5px; }
-    .description .chip-container .badge {
-      margin-right: 4px;
-      margin-top: 4px; }
-      .description .chip-container .badge img {
-        border-width: 2px;
-        border-style: solid; }
-      .description .chip-container .badge.light {
-        background-color: rgba(255, 255, 255, 0.7);
-        color: black; }
-      .description .chip-container .badge.dark {
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white; }
+  backdrop-filter: blur(2px);
+}
+.description .chip-container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 5px;
+}
+.description .chip-container .badge {
+  margin-right: 4px;
+  margin-top: 4px;
+}
+.description .chip-container .badge img {
+  border-width: 2px;
+  border-style: solid;
+}
+.description .chip-container .badge.light {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+}
+.description .chip-container .badge.dark {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
 
 .description.dark {
   background-color: #00000088;
-  color: white; }
+  color: white;
+}
 
 .description:hover {
   backdrop-filter: blur(0px);
-  opacity: 0.0;
-  transition: opacity 0.5s; }
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 
 footer {
   margin-top: 75px;
-  text-align: center; }
+  text-align: center;
+}
 
 a.github-corner {
   display: block;
   position: fixed;
-  top: 0px; }
-  a.github-corner.left {
-    left: 0px; }
-  a.github-corner.right {
-    right: 0px; }
-  a.github-corner img {
-    width: 85px; }
+  top: 0px;
+}
+a.github-corner.left {
+  left: 0px;
+}
+a.github-corner.right {
+  right: 0px;
+}
+a.github-corner img {
+  width: 85px;
+}
 
 .space-box {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 @media screen {
   .print-only {
-    display: none !important; } }
-
+    display: none !important;
+  }
+}
 @media print {
   .print-omit {
-    display: none !important; }
+    display: none !important;
+  }
+
   #resume-page {
-    overflow-y: hidden; }
-    #resume-page .app-content {
-      height: 100%;
-      width: 100%;
-      max-width: 100%; }
-    #resume-page a {
-      text-decoration: none; }
-  body {
-    height: 95%; } }
+    overflow-y: hidden;
+  }
+  #resume-page .app-content {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  #resume-page a {
+    text-decoration: none;
+  }
+
+  html, body {
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
