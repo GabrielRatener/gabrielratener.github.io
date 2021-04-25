@@ -125,6 +125,15 @@ img.profile.xtra-small {
 #portfolio {
   text-align: center;
 }
+#portfolio .doesnt-match {
+  display: none;
+}
+#portfolio .doesnt-match img {
+  filter: grayscale(100%);
+}
+#portfolio .doesnt-match .description {
+  opacity: 0.5;
+}
 #portfolio img.image-t0 {
   width: calc(0.45 * 800px);
 }
@@ -258,6 +267,13 @@ a.github-corner img {
     padding: 0 !important;
     overflow: hidden !important;
   }
+}
+.match-highlight {
+  text-decoration: underline;
+}
+
+.MuiInput-underline::after {
+  border-bottom-color: black !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
