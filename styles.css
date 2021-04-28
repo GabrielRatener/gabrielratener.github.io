@@ -16,6 +16,7 @@ img.qr {
 
 .navbar-brand {
   font-family: HikouInline;
+  color: auto !important;
   font-size: calc(5vw + 8px);
 }
 
@@ -26,6 +27,7 @@ img.qr {
 }
 h1, h2, h3, h4 {
   font-family: HikouInline;
+  color: auto;
 }
 
 .link-unstyled, .link-unstyled:link, .link-unstyled:hover {
@@ -37,6 +39,9 @@ li.nav-item {
   position: relative;
   font-family: HikouRegular;
   font-size: 20px;
+}
+li.nav-item a {
+  color: auto !important;
 }
 
 li.nav-item:hover .shoe.inactive {
@@ -274,6 +279,10 @@ a.github-corner img {
 
 .MuiInput-underline::after {
   border-bottom-color: black !important;
+}
+
+.MuiInputBase-root {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
