@@ -13,13 +13,9 @@ window.onload = (e) => {
   }
 
   const randomColor = (alpha = 0.04) => {
-    var color = [];
-    for (var i = 0; i < 3; i++) {
-      var component = Math.floor(256 * Math.random());
-      color.push(component);
-    }
+    const brightness = floor(256 * random());
+    const color = [brightness, brightness, brightness, alpha];
 
-    color.push(alpha);
     return "rgba(" + color.join(",") + ")";
   }
 
