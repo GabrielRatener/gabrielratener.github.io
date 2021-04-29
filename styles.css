@@ -280,6 +280,14 @@ a.github-corner img {
     overflow: hidden !important;
   }
 }
+.resume-contacts h5 span, .resume-contacts h5 a {
+  vertical-align: middle !important;
+}
+.resume-contacts .resume-icon {
+  vertical-align: middle !important;
+  margin-right: 5px;
+}
+
 .match-highlight {
   text-decoration: underline;
 }

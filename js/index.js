@@ -3,6 +3,8 @@ const MAX_COUNT = 100;
 const SLEEP_TIME = 0;
 const MIN_DURATION = 1000;
 const DURATION_VARIABILITY = 1000;
+const MIN_RADIUS = 100;
+const MAX_RADIUS = 500;
 
 window.onload = (e) => {
   
@@ -24,6 +26,12 @@ window.onload = (e) => {
     return "rgba(" + color.join(",") + ")";
   }
 
+  const randomRadius = () => {
+    const variability = (MAX_RADIUS - MIN_RADIUS);
+
+    return MIN_RADIUS + Math.round(variability * Math.random());
+  }
+
   const putCircle = ([x, y], radius, color) => {
     context.beginPath();
     context.fillStyle = color;
@@ -31,11 +39,65 @@ window.onload = (e) => {
     context.fill();
   }
 
+  // code from steak overflow...
+  const putStar = ([cx, cy], radius, color) => {
+    const spikes = 5;
+    const step = Math.PI / spikes;
+    const outerRadius = radius;
+    const innerRadius = (2 / 5) * radius;
+
+    let rot = Math.PI / 2 * 3;
+    let x = cx;
+    let y = cy;
+
+    context.beginPath();
+    context.moveTo(cx, cy - outerRadius)
+
+    context.strokeStyle = 'transparent';
+    context.lineWidth = 0;
+
+    for (let i = 0; i < spikes; i++) {
+      x = cx + Math.cos(rot) * outerRadius;
+      y = cy + Math.sin(rot) * outerRadius;
+      context.lineTo(x, y);
+      rot += step;
+
+      x = cx + Math.cos(rot) * innerRadius;
+      y = cy + Math.sin(rot) * innerRadius;
+      context.lineTo(x, y);
+      rot += step;
+    }
+
+    context.lineTo(cx, cy - outerRadius);
+    context.closePath();
+    context.stroke();
+    context.fillStyle = color;
+    context.fill();
+  }
+
+
   const revealCircle = (info) => {
     const decider = (ms) => {
       const r = info.radius * (ms - start) / info.duration;
       if (r < info.radius) {
         putCircle(info.point, r, info.color);
+        window.requestAnimationFrame(decider);
+      }
+    };
+
+    let start;
+
+    window.requestAnimationFrame((ms) => {
+      start = ms;
+      decider(ms);
+    });
+  }
+
+  const revealStar = (info) => {
+    const decider = (ms) => {
+      const r = info.radius * (ms - start) / info.duration;
+      if (r < info.radius) {
+        putStar(info.point, r, info.color);
         window.requestAnimationFrame(decider);
       }
     };
@@ -75,6 +137,14 @@ window.onload = (e) => {
     });
   }
 
+  const revealRandomShape = (info) => {
+    if (random() < 0.0) {
+      revealCircle(info);
+    } else {
+      revealStar(info);
+    }
+  }
+
   const sleep = (ms) => {
     return new Promise((done) => {
       window.setTimeout(done, ms);
@@ -100,13 +170,13 @@ window.onload = (e) => {
     let count = 0;
 
     for (const {x, y} of nonRandomPoints) {
-      revealCircle({
+      revealRandomShape({
         point: [x * width, y * height],
         duration: MIN_DURATION,
         spawn: 0,
         color: randomColor(),
         radius: 210
-      }, true);
+      });
   
       count++;
 
@@ -115,32 +185,13 @@ window.onload = (e) => {
 
     for (const [x, y] of randomPoints(width, height)) {
       if (!document.hidden) {
-      //   if (random() < 3 / 4) {
-      //     revealCircle({
-      //       point: [x, y],
-      //       duration: randomDuration(),
-      //       color: randomColor(),
-      //       radius: 50 + Math.round(200 * Math.random())
-      //     }, true);
-      //   } else {
-      //     revealSpiral({
-      //       point: [x, y],
-      //       factor: 20,
-      //       duration: randomDuration(),
-      //       color: randomColor(0.7),
-      //       radius: 50 + Math.round(200 * Math.random())
-      //     }, true);
-      //   }
-      // }
-
-        revealCircle({
+        revealRandomShape({
           point: [x, y],
           duration: randomDuration(),
           color: randomColor(),
-          radius: 50 + Math.round(200 * Math.random())
-        }, true);
+          radius: randomRadius()
+        });
       }
-
 
       await sleep(SLEEP_TIME);
 
