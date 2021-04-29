@@ -1,4 +1,9 @@
 
+const MAX_COUNT = 60;
+const SLEEP_TIME = 0;
+const MIN_DURATION = 1000;
+const DURATION_VARIABILITY = 1000;
+
 window.onload = (e) => {
   
   const {floor, round, random, abs, sin, cos, atan} = Math;
@@ -85,50 +90,65 @@ window.onload = (e) => {
     }
   }
 
+  const randomDuration = () => {
+    return MIN_DURATION + floor(DURATION_VARIABILITY * random())
+  }
+
   const render = async (n) => {
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
-    let i = 0;
+    let count = 0;
 
     for (const {x, y} of nonRandomPoints) {
       revealCircle({
         point: [x * width, y * height],
-        duration: 3000,
+        duration: MIN_DURATION,
         spawn: 0,
         color: randomColor(),
         radius: 210
       }, true);
   
-      await sleep(1000);
+      count++;
+
+      await sleep(SLEEP_TIME);
     }
 
     for (const [x, y] of randomPoints(width, height)) {
       if (!document.hidden) {
+      //   if (random() < 3 / 4) {
+      //     revealCircle({
+      //       point: [x, y],
+      //       duration: randomDuration(),
+      //       color: randomColor(),
+      //       radius: 50 + Math.round(200 * Math.random())
+      //     }, true);
+      //   } else {
+      //     revealSpiral({
+      //       point: [x, y],
+      //       factor: 20,
+      //       duration: randomDuration(),
+      //       color: randomColor(0.7),
+      //       radius: 50 + Math.round(200 * Math.random())
+      //     }, true);
+      //   }
+      // }
 
         revealCircle({
           point: [x, y],
-          duration: 2000 + floor(3000 * random()),
+          duration: randomDuration(),
           color: randomColor(),
           radius: 50 + Math.round(200 * Math.random())
         }, true);
-
-        /*
-        if (random() < 0.5)
-          // maybe put circle here in future...
-        else
-          revealSpiral({
-            point: [x, y],
-            factor: 20,
-            duration: 2000 + floor(3000 * random()),
-            color: randomColor(1),
-            radius: 50 + Math.round(200 * Math.random())
-          }, true);
-        */
       }
 
-      await sleep(1000);
 
-      i++;
+      await sleep(SLEEP_TIME);
+
+      if (count > MAX_COUNT) {
+        return;
+      }
+
+      count++;
     }
   }
 
