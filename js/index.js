@@ -1,5 +1,5 @@
 
-const MAX_COUNT = 60;
+const MAX_COUNT = 100;
 const SLEEP_TIME = 0;
 const MIN_DURATION = 1000;
 const DURATION_VARIABILITY = 1000;
